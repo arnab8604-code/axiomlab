@@ -88,11 +88,11 @@ const Navbar = () => {
     return (
         <nav
             className={`fixed top-0 left-0 z-50 w-full  border border-white/20 bg-white/10 backdrop-blur-xl shadow-2xl transition-all duration-500 ${menuOpen
-                    ? "max-h-screen rounded-b-3xl"
-                    : "h-22 rounded-b-2xl"
+                    ? "max-h-screen"
+                    : "h-18 rounded-b-2xl"
                 }`}>
 
-            <div className="mx-auto flex h-21 max-w-[1600px] items-center justify-between px-6 lg:px-10">
+            <div className="mx-auto flex h-18 max-w-[1600px] items-center justify-between px-6 lg:px-10">
 
                 {/* Logo */}
 
@@ -120,7 +120,7 @@ const Navbar = () => {
                                 <span>{item.title}</span>
 
                                 {item.dropdown && (
-                                    <FiChevronDown className="mt-[2px]" />
+                                    <FiChevronDown className="mt-0.5" />
                                 )}
 
                             </Link>

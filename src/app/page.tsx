@@ -101,7 +101,7 @@ export default function Home() {
 
 
   return (
-    <main className="overflow-x-hidden pt-17.5 bg-[#D8E6EE]">
+    <main className="overflow-x-hidden pt-15 bg-[#D8E6EE]">
 
       {/* ================= Hero section ================= */}
       <section className="relative lg:h-screen min-h-screen overflow-hidden">
@@ -124,7 +124,7 @@ export default function Home() {
 
           ))}
 
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/70 via-slate-800/50 to-transparent backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-linear-to-r from-slate-900/70 via-slate-800/50 to-transparent backdrop-blur-[2px]" />
 
         </div>
 
@@ -143,7 +143,7 @@ export default function Home() {
 
               {/* Badge */}
 
-              <div className="mb-6 inline-flex items-center gap-2 ">
+              <div className="mb-6 mt-8 l:mt-0 inline-flex items-center gap-2 ">
 
                 <FaLeaf className="text-green-500" />
 
@@ -165,7 +165,7 @@ export default function Home() {
 
                 with Environmental
 
-                <span className="bg-gradient-to-r from-sky-500 to-cyan-500 bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-sky-500 to-cyan-500 bg-clip-text text-transparent">
 
                   {" "}Excellence
 
@@ -190,7 +190,7 @@ export default function Home() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: .8, delay: .2 }}
-              className="grid gap-6"
+              className="grid mb-5 l:mb-0 gap-6"
             >        {/* Card 1 */}
 
               <div className="rounded-[28px] border border-white/40 bg-white/55 p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
@@ -315,7 +315,7 @@ export default function Home() {
               <Image
                 src={AXIOM}
                 alt="Axiom Laboratory"
-                className="h-[650px] w-full rounded-3xl object-cover"
+                className="h-162.5w-full rounded-3xl object-cover"
               />
 
             </div>
@@ -441,7 +441,7 @@ export default function Home() {
 
                 {/* Hover Gradient */}
 
-                <div className="absolute inset-0 bg-gradient-to-br from-sky-100/0 via-sky-100/0 to-cyan-100/50 opacity-0 transition duration-500 group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-linear-to-br from-sky-100/0 via-sky-100/0 to-cyan-100/50 opacity-0 transition duration-500 group-hover:opacity-100" />
 
                 <div className="relative z-10">
 
@@ -601,7 +601,7 @@ export default function Home() {
               <Image
                 src={TEAM}
                 alt="Our Team"
-                className="h-[600px] w-full rounded-3xl object-cover"
+                className="h-150 w-full rounded-3xl object-cover"
               />
 
             </div>
@@ -677,13 +677,13 @@ export default function Home() {
 
       {/* ================= CONTACT CTA ================= */}
 
-      <section className="px-6 pb-20 lg:px-2 4">
+      <section className="px-6 pb-20 lg:px-24">
 
         <motion.div
           initial={{ opacity: 0, scale: .95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="relative overflow-hidden rounded-[45px] bg-gradient-to-r from-sky-600 via-cyan-500 to-emerald-500 p-16 shadow-2xl"
+          className="relative overflow-hidden rounded-[45px] bg-linear-to-r from-sky-600 via-cyan-500 to-emerald-500 p-16 shadow-2xl"
         >
 
           {/* Decorative Blobs */}
