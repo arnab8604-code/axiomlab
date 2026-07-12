@@ -1,2 +1,15 @@
 @import "tailwindcss";
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  display: none;
+}
 
+/* Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* IE & Edge Legacy */
+body {
+  -ms-overflow-style: none;
+}

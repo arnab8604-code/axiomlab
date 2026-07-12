@@ -262,9 +262,9 @@ const Navbar = () => {
 
                     <button
                         type="button"
-                        className="mt-6 w-full rounded-full bg-green-500 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:bg-green-600"
+                        className="mt-6 w-full rounded-full bg-green-800 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black"
                     >
-                        Contact Us
+                        Contact us
                     </button>
 
                 </div>
