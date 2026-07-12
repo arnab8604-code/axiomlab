@@ -11,7 +11,7 @@ import {
 
 const Footer = () => {
     return (
-        <footer className="border-t bg-[#D8E6EE]">
+        <footer className="border-t border-slate-300 bg-[#D0E0EA]">
 
             <div className="mx-auto max-w-7xl px-6 pt-10 pb-5">
 
@@ -74,7 +74,7 @@ const Footer = () => {
 
                         <div className="mt-8 flex flex-col gap-4">
 
-                            <Link href="/services">
+                            <Link href="/our_services">
                                 Services
                             </Link>
 

@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 //=========== react icons ============/////
 import {
   FaArrowRight,
@@ -78,13 +79,11 @@ const services = [
 const industries = [
   "Oil & Gas",
   "Manufacturing",
-  "Construction",
-  "Marine & Offshore",
+  "Marine",
   "Power Plants",
-  "Commercial Buildings",
   "Healthcare",
   "Government",
-  "Semiconductor",
+  "Petrochemicals",
 ];
 
 //======== main function ==========
@@ -310,7 +309,7 @@ export default function Home() {
             className="relative"
           >
 
-            <div className="overflow-hidden rounded-[40px] border border-white/40 bg-white/50 p-6 backdrop-blur-xl shadow-2xl">
+            <div className="overflow-hidden rounded-[40px] border border-white/40 bg-white/50 backdrop-blur-xl shadow-[4px_4px_12px_#dddddd,12px_12px_0_#ffffff,12px_12px_0_1px_#cccccc,16px_16px_12px_#dddddd,24px_24px_0_#ffffff,24px_24px_0_1px_#cccccc,28px_28px_12px_#dddddd]">
 
               <Image
                 src={AXIOM}
@@ -428,10 +427,6 @@ export default function Home() {
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{
-                  duration: .6,
-                  delay: index * .08,
-                }}
                 whileHover={{
                   y: -12,
                   scale: 1.03,
@@ -460,22 +455,15 @@ export default function Home() {
                     {service.title}
 
                   </h3>
-
-                  {/* Button */}
-
-                  <button className="mt-8 flex items-center gap-3 font-semibold text-sky-600 transition group-hover:gap-5">
-
-                    Learn More
-
-                    <FaArrowRight />
-
-                  </button>
-
                 </div>
-
               </motion.div>
 
             ))}
+            <div className="flex justify-center md:justify-start items-center ">
+              <Link href="/our_services">
+            <button className="h-15 w-35 rounded-2xl bg-green-500  font-semibold text-white transition hover:bg-green-600 hover:-translate-y-2">learn More</button>
+              </Link>
+            </div>
 
           </div>
 
@@ -596,7 +584,7 @@ export default function Home() {
             className="relative"
           >
 
-            <div className="overflow-hidden rounded-[40px] border border-white/40 bg-white/50 p-6 backdrop-blur-xl shadow-2xl">
+            <div className="overflow-hidden rounded-3xl border border-white/40 bg-white/50 backdrop-blur-xl shadow-[4px_4px_12px_#dddddd,12px_12px_0_#ffffff,12px_12px_0_1px_#cccccc,16px_16px_12px_#dddddd,24px_24px_0_#ffffff,24px_24px_0_1px_#cccccc,28px_28px_12px_#dddddd]">
 
               <Image
                 src={TEAM}
@@ -696,12 +684,6 @@ export default function Home() {
 
             <div>
 
-              <span className="rounded-full bg-white/20 px-5 py-2 text-sm font-semibold text-white">
-
-                CONTACT US
-
-              </span>
-
               <h2 className="mt-6 text-5xl font-black leading-tight text-white">
 
                 Let's Build a
@@ -729,13 +711,6 @@ export default function Home() {
                 Contact Us
 
               </button>
-
-              <button className="rounded-2xl border border-white/40 bg-white/10 px-8 py-4 font-semibold text-white backdrop-blur-xl transition hover:bg-white/20">
-
-                Request Quote
-
-              </button>
-
             </div>
 
           </div>

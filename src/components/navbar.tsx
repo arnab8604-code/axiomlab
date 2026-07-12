@@ -43,8 +43,8 @@ const navLinks: NavLink[] = [
     },
     {
         title: "Services",
-        href: "/services",
-        dropdown: true,
+        href: "/our_services",
+        dropdown: false,
     },
     {
         title: "Careers",
