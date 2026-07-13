@@ -26,16 +26,15 @@ import {
   HiOutlineDocumentCheck,
 } from "react-icons/hi2";
 
-//================ images =========//////
+//================ banner images =========//////
 import AXIOM from "@/assets/AXIOM.jpg";
 import TEAM from "@/assets/AXIOM_TEAM.jpg";
 
-//======= images array from public ========//
+//======= hero images array from public ========//
 const images = [
   "/hero/hero1.jpg",
    "/hero/hero2.jpg",
    "/hero/hero3.jpg"
-
 ];
 // ======== services array ===========//
 const services = [
@@ -142,17 +141,6 @@ export default function Home() {
 
               {/* Badge */}
 
-              <div className="mb-6 mt-8 l:mt-0 inline-flex items-center gap-2 ">
-
-                <FaLeaf className="text-green-500" />
-
-                <span className="text-sm font-medium text-white">
-
-                  Trusted Environmental Laboratory
-
-                </span>
-
-              </div>
 
               {/* Heading */}
 
@@ -171,14 +159,16 @@ export default function Home() {
                 </span>
 
               </h1>
+              <div className="mb-6 mt-8 l:mt-0 inline-flex items-center gap-2 ">
 
-              <div className="mt-10 flex flex-wrap gap-5">
+                <FaLeaf className="text-green-500" />
 
-                <button className="rounded-2xl bg-green-500 px-8 py-4 font-semibold text-white shadow-lg transition hover:bg-green-600">
+                <span className="text-sm font-medium text-white">
 
-                  learn More
+                  Trusted Environmental Laboratory
 
-                </button>
+                </span>
+
               </div>
 
             </motion.div>
@@ -222,7 +212,7 @@ export default function Home() {
                 </div>
 
                 <h3 className="mt-6 text-2xl font-bold text-slate-900">
-                  Professional Integrity
+                  Our Clientele
                 </h3>
 
                 <p className="mt-3 leading-7 text-white">
@@ -292,13 +282,13 @@ export default function Home() {
 
             </p>
 
-            <button className="mt-10 flex items-center gap-3 rounded-2xl bg-green-500 px-8 py-4 font-semibold text-white transition hover:bg-green-600">
+            <Link href="/about" className="mt-10 flex w-40 items-center justify-center gap-2 rounded-2xl bg-green-700 px-4 py-4 font-semibold  text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black">
 
               Learn More
 
               <FaArrowRight />
 
-            </button>
+            </Link>
 
           </motion.div>
           <motion.div
@@ -461,7 +451,13 @@ export default function Home() {
             ))}
             <div className="flex justify-center md:justify-start items-center ">
               <Link href="/our_services">
-            <button className="h-15 w-35 rounded-2xl bg-green-500  font-semibold text-white transition hover:bg-green-600 hover:-translate-y-2">learn More</button>
+            <button className="flex items-center gap-3 rounded-2xl bg-green-700 px-8 py-4 font-semibold  text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black">
+
+              Learn More
+
+              <FaArrowRight />
+
+            </button>
               </Link>
             </div>
 
@@ -649,12 +645,12 @@ export default function Home() {
                 ))}
               </div>
 
-
-              <button className="mt-8 w-70 rounded-2xl bg-green-500 px-8 py-4 font-semibold text-white transition hover:bg-green-600">
-
+              <button className="w-70 flex justify-center items-center gap-3 rounded-2xl bg-green-700 px-8 py-4 font-semibold  text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black">
                 View Careers
 
-              </button>
+              <FaArrowRight />
+
+            </button>
             </div>
 
           </motion.div>
@@ -706,11 +702,11 @@ export default function Home() {
 
             <div className="flex flex-wrap gap-6 lg:justify-end">
 
-              <button className="rounded-2xl bg-white px-8 py-4 font-semibold text-sky-700 shadow-xl transition hover:scale-105">
+              <button className="mt-10 flex items-center gap-3 rounded-2xl bg-white px-8 py-4  text-black hover:text-white font-bold transition-all duration-300 hover:scale-[1.02] hover:bg-black">
 
-                Contact Us
+              Contact US
 
-              </button>
+            </button>
             </div>
 
           </div>

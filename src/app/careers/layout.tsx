@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import ServiceHeader from "@/components/services/service-header";
+import CareerHeader from "@/components/careers/career-header";
 
 export default function ServicesLayout({
   children,
@@ -8,7 +8,7 @@ export default function ServicesLayout({
 }) {
   return (
     <div className="min-h-screen bg-[#D8E6EE]">
-      <ServiceHeader/>
+      <CareerHeader/>
       <main>{children}</main>
     </div>
   );

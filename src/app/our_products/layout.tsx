@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import ServiceHeader from "@/components/services/service-header";
+import ProductHeader from "@/components/products/product-header";
 
 export default function ServicesLayout({
   children,
@@ -8,7 +8,7 @@ export default function ServicesLayout({
 }) {
   return (
     <div className="min-h-screen bg-[#D8E6EE]">
-      <ServiceHeader/>
+      <ProductHeader/>
       <main>{children}</main>
     </div>
   );

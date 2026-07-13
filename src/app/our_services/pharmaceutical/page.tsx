@@ -1,16 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { FaChevronDown } from "react-icons/fa";
 
 const services = [
   {
-  title: "Microbial Contamination Survey & Remediation",
-  description: `Microbes; pathogenic bacteria, fungi (mould, mildew) & virus causes materials contamination & health issues. They impair our health and create allergic symptoms like coughing, sneezing, headache, itchy eyes, skin irritation, asthmatic effects and even pathogenic diseases like legionnaire disease, bronchopneumonia, respiratory infection and bronchitis.  We are capable of providing a one-stop solution to our clients through sampling, microbial analysis and bio-decontamination services.`,
-},
+    title: "Microbial Contamination Survey & Remediation",
+    description: `Microbes; pathogenic bacteria, fungi (mould, mildew) & virus causes materials contamination & health issues. They impair our health and create allergic symptoms like coughing, sneezing, headache, itchy eyes, skin irritation, asthmatic effects and even pathogenic diseases like legionnaire disease, bronchopneumonia, respiratory infection and bronchitis.  We are capable of providing a one-stop solution to our clients through sampling, microbial analysis and bio-decontamination services.`,
+  },
   {
     title: "Environmental Baseline Study (EBS) and Pollution Control Study (PCS)",
-    description:`Axiomlab will involve as Environmental Coordinator for the entire EBS / PCS project and lead by experienced environmentalists with strong support between our Environmental Services and Laboratory Testing Divisions within the company.
+    description: `Axiomlab will involve as Environmental Coordinator for the entire EBS / PCS project and lead by experienced environmentalists with strong support between our Environmental Services and Laboratory Testing Divisions within the company.
 
 We are able to provide a comprehensive package price for JTC’s Guideline on Environmental Baseline Study (2015 Edition) as well as testing and assessment based on their respective Chemicals Compound Target and Intervention Values of Dutch Standards 2000.  Laboratory analysis shall be performed with reference to generally accepted international standards such as the USEPA SW-846 “Test Methods for Evaluating Solid Wastes, Physical/Chemical Methods”, 3rd Edition, November 1990;  EPA-600/4-79-020 “Methods for Chemical Analysis of Water and Wastes”, revised March 1983 (ie. for soil and groundwater samples), and the American Public Health Association (APHA) “Standard Methods for Examination of Water and Wastewater”, 23rd Edition, 2017 (ie. for groundwater samples).
 
@@ -68,19 +69,17 @@ export default function ManufacturingIndustryPage() {
                   </span>
 
                   <FaChevronDown
-                    className={`text-sky-600 transition-transform duration-300 ${
-                      openIndex === index ? "rotate-180" : ""
-                    }`}
+                    className={`text-sky-600 transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
 
                 {/* Body */}
                 <div
-                  className={`grid transition-all duration-300 ${
-                    openIndex === index
+                  className={`grid transition-all duration-300 ${openIndex === index
                       ? "grid-rows-[1fr]"
                       : "grid-rows-[0fr]"
-                  }`}
+                    }`}
                 >
                   <div className="overflow-hidden">
                     <div className="border-t border-slate-200 bg-slate-50 px-6 py-5">
@@ -88,9 +87,9 @@ export default function ManufacturingIndustryPage() {
                         {service.description}
                       </p>
 
-                      <button className="mt-6 rounded-xl bg-sky-600 px-5 py-3 font-medium text-white transition hover:bg-sky-700">
+                      <Link href="/our_services/service_enquiry" className=" block w-25 flex justify-center mt-10 rounded-xl bg-sky-600 px-5 py-3 font-medium text-white transition hover:bg-sky-700">
                         Enquire
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { FaChevronDown } from "react-icons/fa";
 
 const services = [
@@ -78,9 +79,9 @@ export default function ManufacturingIndustryPage() {
                         {service.description}
                       </p>
 
-                      <button className="mt-6 rounded-xl bg-sky-600 px-5 py-3 font-medium text-white transition hover:bg-sky-700">
+                      <Link href="/our_services/service_enquiry" className=" block w-25 flex justify-center mt-10 rounded-xl bg-sky-600 px-5 py-3 font-medium text-white transition hover:bg-sky-700">
                         Enquire
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

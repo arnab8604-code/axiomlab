@@ -1,12 +1,10 @@
 "use client";
 
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 import logo from "@/assets/AXIOM_LOGO.webp";
-
-import { FiChevronDown } from "react-icons/fi";
 import { FaUserAlt } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
@@ -18,7 +16,6 @@ import { HiMenuAlt3, HiX } from "react-icons/hi";
 interface NavLink {
     title: string;
     href: string;
-    dropdown: boolean;
 }
 
 /* =====================================
@@ -29,37 +26,30 @@ const navLinks: NavLink[] = [
     {
         title: "Home",
         href: "/",
-        dropdown: false,
     },
     {
         title: "About Us",
         href: "/about",
-        dropdown: false,
     },
     {
         title: "Our Products",
-        href: "/products",
-        dropdown: true,
+        href: "/our_products",
     },
     {
         title: "Services",
         href: "/our_services",
-        dropdown: false,
     },
     {
         title: "Careers",
         href: "/careers",
-        dropdown: false,
     },
     {
         title: "News",
         href: "/news",
-        dropdown: false,
     },
     {
         title: "Shop",
         href: "/shop",
-        dropdown: false,
     },
 ];
 
@@ -68,7 +58,7 @@ const navLinks: NavLink[] = [
 ===================================== */
 
 const navItem =
-    "relative flex items-center gap-1 text-base xl:text-xl font-medium text-black transition-all duration-300 hover:-translate-y-1 hover:text-cyan-500 after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:bg-cyan-500 after:content-[''] after:origin-center after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100";
+    "relative text-base xl:text-xl font-medium text-black transition-all duration-300 hover:-translate-y-1 hover:text-cyan-500 after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:bg-cyan-500 after:content-[''] after:origin-center after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100";
 
 const iconButton =
     "flex items-center justify-center h-10 w-10 rounded-full transition duration-300 hover:scale-105";
@@ -78,18 +68,18 @@ const iconButton =
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
     useEffect(() => {
-  document.body.style.overflow = menuOpen ? "hidden" : "auto";
+        document.body.style.overflow = menuOpen ? "hidden" : "auto";
 
-  return () => {
-    document.body.style.overflow = "auto";
-  };
-}, [menuOpen]);
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, [menuOpen]);
 
     return (
         <nav
             className={`fixed top-0 left-0 z-50 w-full  border border-white/20 bg-white/10 backdrop-blur-xl shadow-2xl transition-all duration-500 ${menuOpen
-                    ? "max-h-screen"
-                    : "h-18 rounded-b-2xl"
+                ? "max-h-screen"
+                : "h-18 rounded-b-2xl"
                 }`}>
 
             <div className="mx-auto flex h-18 max-w-[1600px] items-center justify-between px-6 lg:px-10">
@@ -119,10 +109,6 @@ const Navbar = () => {
                             >
                                 <span>{item.title}</span>
 
-                                {item.dropdown && (
-                                    <FiChevronDown className="mt-0.5" />
-                                )}
-
                             </Link>
 
                         </li>
@@ -138,7 +124,7 @@ const Navbar = () => {
 
                     <button
                         type="button"
-                        className="rounded-full bg-green-500 px-4 xl:px-6 py-2 font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-green-600"
+                        className="rounded-full px-4 xl:px-6 py-2 font-semibold bg-green-700 text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black"
                     >
                         Contact Us
                     </button>
@@ -183,15 +169,15 @@ const Navbar = () => {
             </div>
 
             {/*Mobile Navigation*/}
- 
+
             <div
-                className={`lg:hidden transition-all duration-500 ease-in-out ${menuOpen
-                        ? "translate-y-0 opacity-100"
-                        : "-translate-y-3 opacity-0 pointer-events-none"
+                className={`lg:hidden transition-all duration-600 ease-in-out ${menuOpen
+                    ? "translate-y-0 opacity-100"
+                    : "-translate-y-3 opacity-0 pointer-events-none"
                     }`}
             >
 
-               <div className="h-[calc(100vh-4rem)] overflow-y-auto px-6 pb-8">
+                <div className="h-[calc(100vh-4rem)] overflow-y-auto px-6 pb-8">
 
                     {/* Navigation Links */}
 
@@ -204,14 +190,10 @@ const Navbar = () => {
                                 <Link
                                     href={item.href}
                                     onClick={() => setMenuOpen(false)}
-                                    className="flex items-center justify-between border-b border-black/10 pb-3 text-lg font-medium transition duration-300 hover:text-cyan-500"
+                                    className="flex items-center justify-between border-b border-black/10 pb-3 text-lg font-medium transition duration-200 hover:text-cyan-500"
                                 >
 
                                     <span>{item.title}</span>
-
-                                    {item.dropdown && (
-                                        <FiChevronDown size={18} />
-                                    )}
 
                                 </Link>
 

@@ -54,7 +54,7 @@ const Footer = () => {
                                 About Us
                             </Link>
 
-                            <Link href="/products">
+                            <Link href="/our_products">
                                 Products
                             </Link>
 
