@@ -8,6 +8,7 @@ import logo from "@/assets/AXIOM_LOGO.webp";
 import { FaUserAlt } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { useAppSelector } from "@/redux/hooks";
 
 /* =====================================
    Types
@@ -47,10 +48,6 @@ const navLinks: NavLink[] = [
         title: "News",
         href: "/news",
     },
-    {
-        title: "Shop",
-        href: "/shop",
-    },
 ];
 
 /* =====================================
@@ -68,6 +65,23 @@ const iconButton =
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
     useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 1200) {
+                setMenuOpen(false);
+            }
+        };
+
+        // Check once when component mounts
+        handleResize();
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
+    useEffect(() => {
         document.body.style.overflow = menuOpen ? "hidden" : "auto";
 
         return () => {
@@ -75,12 +89,16 @@ const Navbar = () => {
         };
     }, [menuOpen]);
 
+    const cart = useAppSelector(state => state.cart.cart);
+
+  const totalItems = cart.reduce(
+    (sum, item) => sum + item.quantity,
+    0
+  );
+
     return (
         <nav
-            className={`fixed top-0 left-0 z-50 w-full  border border-white/20 bg-white/10 backdrop-blur-xl shadow-2xl transition-all duration-500 ${menuOpen
-                ? "max-h-screen"
-                : "h-18 rounded-b-2xl"
-                }`}>
+           className={`fixed top-3 left-0 right-0 z-50 mx-auto w-[95%] max-w-[1600px] overflow-hidden border border-white/20 bg-white/50 backdrop-blur-xl shadow-2xl ${menuOpen? "max-h-screen rounded-t-3xl": "h-18 rounded-full"}`}>
 
             <div className="mx-auto flex h-18 max-w-[1600px] items-center justify-between px-6 lg:px-10">
 
@@ -122,12 +140,12 @@ const Navbar = () => {
 
                     {/* Contact Button */}
 
-                    <button
+                    <Link href="/contact"
                         type="button"
                         className="rounded-full px-4 xl:px-6 py-2 font-semibold bg-green-700 text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black"
                     >
                         Contact Us
-                    </button>
+                    </Link>
 
                     {/* User Button */}
 
@@ -136,7 +154,9 @@ const Navbar = () => {
                         aria-label="User Profile"
                         className={`${iconButton} text-black hover:ring-2 hover:ring-white`}
                     >
+                        <Link href="/login">
                         <FaUserAlt size={18} />
+                        </Link>
                     </button>
 
                     {/* Cart Button */}
@@ -144,9 +164,12 @@ const Navbar = () => {
                     <button
                         type="button"
                         aria-label="Shopping Cart"
-                        className={`${iconButton} text-black`}
+                        className={`${iconButton} relative text-black`}
                     >
+                        <Link href="/cart">
                         <FaCartShopping size={26} />
+                        <span className="flex absolute justify-center items-center -top-1 animate-bounce -right-1 h-4 w-4 text-white font-semibold border-2 p-2 border-black bg-black  rounded-full">{totalItems}</span>
+                        </Link>
                     </button>
 
                 </div>
@@ -171,7 +194,7 @@ const Navbar = () => {
             {/*Mobile Navigation*/}
 
             <div
-                className={`lg:hidden transition-all duration-600 ease-in-out ${menuOpen
+                className={`lg:hidden ${menuOpen
                     ? "translate-y-0 opacity-100"
                     : "-translate-y-3 opacity-0 pointer-events-none"
                     }`}
@@ -227,11 +250,12 @@ const Navbar = () => {
                         <button
                             type="button"
                             aria-label="Shopping Cart"
-                            className="flex flex-col items-center gap-2 transition duration-300 hover:scale-105"
+                            className="relative flex flex-col items-center gap-2 transition duration-300 hover:scale-105"
                         >
-                            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md">
+                            <Link href="/cart" className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md" onClick={() => setMenuOpen((prev) => !prev)}>
                                 <FaCartShopping size={22} />
-                            </div>
+                            </Link>
+                            <span className="flex absolute justify-center items-center -top-1 animate-bounce -right-1 h-4 w-4 text-white font-semibold border-2 p-2 border-black bg-black  rounded-full">{totalItems}</span>
 
                             <span className="text-sm font-medium">
                                 Cart

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import type { Career } from "@/types/career";
+import Link from "next/link";
 
 interface CareerCardProps {
   career: Career;
@@ -108,10 +109,9 @@ const CareerCard = ({ career }: CareerCardProps) => {
               </ul>
 
               {/* Apply */}
-
-              <button className="mt-10 rounded-full bg-green-700 px-8 py-3 font-semibold text-white transition hover:bg-black">
-                Apply Now
-              </button>
+              <Link href="/job_apply" className="inline-block mt-10 rounded-full bg-green-700 px-8 py-3 font-semibold text-white transition hover:bg-black">
+              Apply now
+              </Link>
 
             </div>
 

@@ -99,7 +99,7 @@ export default function Home() {
 
 
   return (
-    <main className="overflow-x-hidden pt-15 bg-[#D8E6EE]">
+    <main className="overflow-x-hidden  bg-[#D8E6EE]">
 
       {/* ================= Hero section ================= */}
       <section className="relative lg:h-screen min-h-screen overflow-hidden">
@@ -138,13 +138,9 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: .8 }}
             >
-
-              {/* Badge */}
-
-
               {/* Heading */}
 
-              <h1 className="text-4xl font-black leading-tight text-white sm:text-5xl lg:text-7xl">
+              <h1 className="text-4xl font-black leading-tight text-white mt-24 lg:mt-10 sm:text-5xl lg:text-7xl">
 
                 Empowering Industries
 
@@ -159,7 +155,7 @@ export default function Home() {
                 </span>
 
               </h1>
-              <div className="mb-6 mt-8 l:mt-0 inline-flex items-center gap-2 ">
+              <div className="mt-8 l:mt-0 inline-flex items-center gap-2 ">
 
                 <FaLeaf className="text-green-500" />
 
@@ -179,7 +175,7 @@ export default function Home() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: .8, delay: .2 }}
-              className="grid mb-5 l:mb-0 gap-6"
+              className="grid lg:mt-20 l:mb-0 mb-10 gap-6"
             >        {/* Card 1 */}
 
               <div className="rounded-[28px] border border-white/40 bg-white/55 p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
@@ -672,7 +668,7 @@ export default function Home() {
 
           {/* Decorative Blobs */}
 
-          <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
+          <div className="absolute -left-24 -top-24  rounded-full bg-white/10 blur-3xl" />
 
           <div className="absolute -bottom-20 right-0 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
 
@@ -680,7 +676,7 @@ export default function Home() {
 
             <div>
 
-              <h2 className="mt-6 text-5xl font-black leading-tight text-white">
+              <h2 className="mt-6  text-3xl md:text-5xl font-black leading-tight text-white">
 
                 Let's Build a
                 <br />

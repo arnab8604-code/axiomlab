@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-
+import AddToCartButton from "@/components/products/addToCart";
 import { products } from "@/temp-data/products/products";
 
 interface Props {
@@ -71,6 +71,7 @@ const ProductDetailsPage = async ({ params }: Props) => {
             <p className="mt-8 text-lg leading-8 text-slate-700">
               {product.description}
             </p>
+            <AddToCartButton product={product} />
 
           </div>
 
