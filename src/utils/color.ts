@@ -1,0 +1,1 @@
+export const bg="bg-[#D8E6EE]";

@@ -27,6 +27,10 @@ const pageContent = {
     title: "Shopping Cart",
     highlight: "Your Selection",
   },
+  news: {
+    title: "News",
+    highlight: " To keep you updated",
+  },
 };
 
 export default function PagesLayout({

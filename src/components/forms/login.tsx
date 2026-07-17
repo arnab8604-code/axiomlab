@@ -6,7 +6,6 @@ function Login() {
     Password: "",
   });
   const [isRegistered, setIsRegistered] = useState(true);
-  const [submitted, setSubmitted] = useState(false);
   const [RegisterData, setRegisterData] = useState({
     Username: "",
     Password: "",

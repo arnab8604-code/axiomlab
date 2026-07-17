@@ -154,7 +154,7 @@ const Navbar = () => {
                         aria-label="User Profile"
                         className={`${iconButton} text-black hover:ring-2 hover:ring-white`}
                     >
-                        <Link href="/login">
+                        <Link href="/profile">
                         <FaUserAlt size={18} />
                         </Link>
                     </button>

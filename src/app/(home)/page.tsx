@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import {bg} from "@/utils/color"
 //=========== react icons ============/////
 import {
   FaArrowRight,
@@ -99,7 +100,7 @@ export default function Home() {
 
 
   return (
-    <main className="overflow-x-hidden  bg-[#D8E6EE]">
+    <main className={`overflow-x-hidden ${bg}`}>
 
       {/* ================= Hero section ================= */}
       <section className="relative lg:h-screen min-h-screen overflow-hidden">
@@ -352,10 +353,7 @@ export default function Home() {
                 }}
                 className="rounded-[30px] border border-white/40 bg-white/50 p-8 backdrop-blur-xl shadow-xl transition-all"
               >
-
-                <HiOutlineBuildingOffice2 className="text-5xl text-sky-600" />
-
-                <h3 className="mt-6 text-2xl font-bold text-slate-900">
+                <h3 className=" text-center text-2xl font-bold text-slate-900">
 
                   {industry}
 
@@ -462,104 +460,6 @@ export default function Home() {
         </div>
 
       </section>
-
-
-      {/* ================= BLOGS ================= */}
-
-      <section className="px-6 py-20 lg:px-24">
-
-        <div className="mx-auto max-w-7xl">
-
-          <div className="flex items-center justify-between">
-
-            <div>
-
-              <h2 className="mt-6 text-5xl font-black text-slate-900">
-
-                Take A Read
-
-              </h2>
-
-            </div>
-
-            <button className="hidden rounded-2xl bg-sky-600 px-6 py-3 font-semibold text-white lg:block">
-
-              View All
-
-            </button>
-
-          </div>
-
-          <div className="mt-16 grid gap-10 lg:grid-cols-2">
-
-            {[
-              {
-                date: "05 Jan 2024",
-                title:
-                  "The Significance of Environmental Testing for Sustainable Industries",
-                image: "/blog1.jpg",
-              },
-              {
-                date: "24 Jan 2024",
-                title:
-                  "Pioneering Sustainable Solutions Through Environmental Innovation",
-                image: "/blog2.jpg",
-              },
-            ].map((blog, index) => (
-
-              <motion.div
-                key={index}
-                whileHover={{
-                  y: -10,
-                }}
-                className="overflow-hidden rounded-[35px] border border-white/40 bg-white/50 backdrop-blur-xl shadow-xl"
-              >
-
-                <div className="overflow-hidden">
-
-                  <img
-                    src={blog.image}
-                    alt={blog.title}
-                    className="h-72 w-full object-cover transition duration-500 hover:scale-110"
-                  />
-
-                </div>
-
-                <div className="p-8">
-
-                  <p className="text-sm font-semibold text-sky-600">
-
-                    {blog.date}
-
-                  </p>
-
-                  <h3 className="mt-5 text-3xl font-bold leading-snug text-slate-900">
-
-                    {blog.title}
-
-                  </h3>
-
-                  <button className="mt-8 flex items-center gap-3 font-semibold text-sky-600">
-
-                    Read More
-
-                    <FaArrowRight />
-
-                  </button>
-
-                </div>
-
-              </motion.div>
-
-            ))}
-
-          </div>
-
-        </div>
-
-      </section>
-
-
       {/* ================= JOIN OUR TEAM ================= */}
 
       <section className="px-6 py-28 lg:px-24">
