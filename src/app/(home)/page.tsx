@@ -176,7 +176,7 @@ export default function Home() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: .8, delay: .2 }}
-              className="grid lg:mt-20 l:mb-0 mb-10 gap-6"
+              className="grid lg:mt-20 -mt-5 l:mb-0 mb-10 gap-6"
             >        {/* Card 1 */}
 
               <div className="rounded-[28px] border border-white/40 bg-white/55 p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
@@ -296,7 +296,7 @@ export default function Home() {
             className="relative"
           >
 
-            <div className="overflow-hidden rounded-[40px] border border-white/40 bg-white/50 backdrop-blur-xl shadow-[4px_4px_12px_#dddddd,12px_12px_0_#ffffff,12px_12px_0_1px_#cccccc,16px_16px_12px_#dddddd,24px_24px_0_#ffffff,24px_24px_0_1px_#cccccc,28px_28px_12px_#dddddd]">
+            <div className="overflow-hidden rounded-[40px] border border-white/40 bg-white/50 backdrop-blur-xl shadow-[4px_4px_12px_#dddddd,12px_12px_0_#ffffff,12px_12px_0_1px_#cccccc,16px_16px_12px_#dddddd] md:shadow-[4px_4px_12px_#dddddd,12px_12px_0_#ffffff,12px_12px_0_1px_#cccccc,16px_16px_12px_#dddddd,24px_24px_0_#ffffff,24px_24px_0_1px_#cccccc,28px_28px_12px_#dddddd]">
 
               <Image
                 src={AXIOM}
@@ -476,7 +476,7 @@ export default function Home() {
             className="relative"
           >
 
-            <div className="overflow-hidden rounded-3xl border border-white/40 bg-white/50 backdrop-blur-xl shadow-[4px_4px_12px_#dddddd,12px_12px_0_#ffffff,12px_12px_0_1px_#cccccc,16px_16px_12px_#dddddd,24px_24px_0_#ffffff,24px_24px_0_1px_#cccccc,28px_28px_12px_#dddddd]">
+            <div className="overflow-hidden rounded-3xl border border-white/40 bg-white/50 backdrop-blur-xl shadow-[4px_4px_12px_#dddddd,12px_12px_0_#ffffff,12px_12px_0_1px_#cccccc,16px_16px_12px_#dddddd] md:shadow-[4px_4px_12px_#dddddd,12px_12px_0_#ffffff,12px_12px_0_1px_#cccccc,16px_16px_12px_#dddddd,24px_24px_0_#ffffff,24px_24px_0_1px_#cccccc,28px_28px_12px_#dddddd]">
 
               <Image
                 src={TEAM}
