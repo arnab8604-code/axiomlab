@@ -233,9 +233,9 @@ export default function Home() {
 
       {/* ================= ABOUT ================= */}
 
-      <section className="px-6 py-20 lg:px-24">
+      <section className="px-6 py-10 md:pb-20 lg:px-24">
 
-        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-20 lg:grid-cols-2">
+        <div className="mx-auto text-center md:text-left grid max-w-7xl grid-cols-1 items-center gap-10 lg:gap-20 lg:grid-cols-2">
           {/* Right Content */}
 
           <motion.div
@@ -278,7 +278,7 @@ export default function Home() {
               and sustainable operations.
 
             </p>
-
+            <div className="flex justify-center md:justify-start">
             <Link href="/about" className="mt-10 flex w-40 items-center justify-center gap-2 rounded-2xl bg-green-700 px-4 py-4 font-semibold  text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black">
 
               Learn More
@@ -286,6 +286,7 @@ export default function Home() {
               <FaArrowRight />
 
             </Link>
+            </div>
 
           </motion.div>
           <motion.div
@@ -327,7 +328,7 @@ export default function Home() {
 
       {/* ================= INDUSTRIES ================= */}
 
-      <section className="px-6 py-20 lg:px-24">
+      <section className="px-6 py-10 md:pb-20 lg:px-24">
 
         <div className="mx-auto max-w-7xl">
 
@@ -370,7 +371,7 @@ export default function Home() {
       </section>
       {/* ================= SERVICES ================= */}
 
-      <section className="relative px-6 py-20 lg:px-24">
+      <section className="relative px-6 py-10 md:pb-20 lg:px-24">
 
         <div className="mx-auto max-w-7xl">
 
@@ -444,15 +445,12 @@ export default function Home() {
 
             ))}
             <div className="flex justify-center md:justify-start items-center ">
-              <Link href="/our_services">
-            <button className="flex items-center gap-3 rounded-2xl bg-green-700 px-8 py-4 font-semibold  text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black">
-
+              <Link href="/about" className="mt-10 flex w-40 items-center justify-center gap-2 rounded-2xl bg-green-700 px-4 py-4 font-semibold  text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black">
               Learn More
 
               <FaArrowRight />
 
-            </button>
-              </Link>
+            </Link>
             </div>
 
           </div>
@@ -462,9 +460,9 @@ export default function Home() {
       </section>
       {/* ================= JOIN OUR TEAM ================= */}
 
-      <section className="px-6 py-28 lg:px-24">
+      <section className="px-6 py-10 md:pb-20 lg:px-24">
 
-        <div className="mx-auto grid max-w-7xl items-center gap-20 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-7xl items-center gap-5 md:gap-20 lg:grid-cols-2">
 
           {/* Left Image */}
 
@@ -495,6 +493,7 @@ export default function Home() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: .7 }}>
+              <div className="text-center md:text-left">
 
             <h2 className="mt-6 text-5xl font-black leading-tight text-slate-900">
 
@@ -508,9 +507,10 @@ export default function Home() {
 
               Be part of a group of dedicated professionals driven by a shared commitment to environmental excellence and making a positive impact on our world.
             </p>
+              </div>
 
-            <div className=" flex flex-col mt-10 space-y-6">
-              <div className="flex flex-wrap gap-3">
+            <div className=" flex flex-col items-center md:items-start mt-10 space-y-6">
+              <div className="flex justify-center md:justify-start flex-wrap gap-3">
                 {[
                   "Team Collaboration",
                   "Professional Development",
@@ -557,7 +557,7 @@ export default function Home() {
 
       {/* ================= CONTACT CTA ================= */}
 
-      <section className="px-6 pb-20 lg:px-24">
+      <section className="px-6 pt-10 pb-20 md:pb-28 lg:px-24">
 
         <motion.div
           initial={{ opacity: 0, scale: .95 }}
