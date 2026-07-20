@@ -50,7 +50,7 @@ export default function PagesLayout({
       {/* Page Header */}
 
       {page && (
-        <section className="bg-[#D8E6EE] pt-30 pb-12 text-center">
+        <section className="bg-[#D8E6EE] pt-30 pb-3 sm:pb-10 text-center">
           <div className="mx-auto max-w-6xl px-6">
 
             <h1 className="text-2xl font-bold tracking-tight text-slate-900 md:text-5xl lg:text-6xl">
@@ -60,7 +60,7 @@ export default function PagesLayout({
               </span>
             </h1>
 
-            <div className="mx-auto mt-6 h-1 w-24 rounded-full bg-gradient-to-r from-sky-500 to-cyan-500" />
+            <div className="mx-auto mt-3 sm:mt-6 h-1 w-24 rounded-full bg-gradient-to-r from-sky-500 to-cyan-500" />
 
           </div>
         </section>

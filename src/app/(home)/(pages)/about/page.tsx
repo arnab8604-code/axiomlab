@@ -2,7 +2,7 @@ const AboutPage = () => {
   return (
  <section className="bg-[#D8E6EE] pb-24">
 
-  <div className="mx-auto max-w-7xl space-y-20 px-6">
+  <div className="mx-auto max-w-7xl space-y-10 md:space-y-20 px-6">
 
     {/* About */}
 

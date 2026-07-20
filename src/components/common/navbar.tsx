@@ -91,14 +91,14 @@ const Navbar = () => {
 
     const cart = useAppSelector(state => state.cart.cart);
 
-  const totalItems = cart.reduce(
-    (sum, item) => sum + item.quantity,
-    0
-  );
+    const totalItems = cart.reduce(
+        (sum, item) => sum + item.quantity,
+        0
+    );
 
     return (
         <nav
-           className={`fixed top-3 left-0 right-0 z-50 mx-auto w-[95%] max-w-[1600px] overflow-hidden border border-white/20 bg-white/50 backdrop-blur-xl shadow-2xl ${menuOpen? "max-h-screen rounded-t-3xl": "h-18 rounded-full"}`}>
+            className={`fixed top-3 left-0 right-0 z-50 mx-auto w-[95%] max-w-[1600px] overflow-hidden border border-white/20 bg-white/50 backdrop-blur-xl shadow-2xl ${menuOpen ? "max-h-screen rounded-t-3xl" : "h-18 rounded-full"}`}>
 
             <div className="mx-auto flex h-18 max-w-[1600px] items-center justify-between px-6 lg:px-10">
 
@@ -155,7 +155,7 @@ const Navbar = () => {
                         className={`${iconButton} text-black hover:ring-2 hover:ring-white`}
                     >
                         <Link href="/profile">
-                        <FaUserAlt size={18} />
+                            <FaUserAlt size={18} />
                         </Link>
                     </button>
 
@@ -167,8 +167,8 @@ const Navbar = () => {
                         className={`${iconButton} relative text-black`}
                     >
                         <Link href="/cart">
-                        <FaCartShopping size={26} />
-                        <span className="flex absolute justify-center items-center -top-1 animate-bounce -right-1 h-4 w-4 text-white font-semibold border-2 p-2 border-black bg-black  rounded-full">{totalItems}</span>
+                            <FaCartShopping size={26} />
+                            <span className="flex absolute justify-center items-center -top-1 animate-bounce -right-1 h-4 w-4 text-white font-semibold border-2 p-2 border-black bg-black  rounded-full">{totalItems}</span>
                         </Link>
                     </button>
 
@@ -236,9 +236,9 @@ const Navbar = () => {
                             aria-label="User Profile"
                             className="flex flex-col items-center gap-2 transition duration-300 hover:scale-105"
                         >
-                            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md">
+                            <Link href="/profile" className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md" onClick={() => setMenuOpen((prev) => !prev)}>
                                 <FaUserAlt size={18} />
-                            </div>
+                            </Link>
 
                             <span className="text-sm font-medium">
                                 Profile
@@ -265,13 +265,14 @@ const Navbar = () => {
                     </div>
 
                     {/* Contact Button */}
-
-                    <button
-                        type="button"
-                        className="mt-6 w-full rounded-full bg-green-800 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black"
-                    >
-                        Contact us
-                    </button>
+                    <div className="flex justify-center">
+                        <Link
+                            href="/contact"
+                            className="mt-8 inline-flex w-40 items-center justify-center rounded-full bg-green-800 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
+                        >
+                            Contact Us
+                        </Link>
+                    </div>
 
                 </div>
             </div>
