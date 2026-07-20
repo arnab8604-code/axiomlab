@@ -279,7 +279,7 @@ export default function Home() {
 
             </p>
             <div className="flex justify-center md:justify-start">
-            <Link href="/about" className="mt-10 flex w-40 items-center justify-center gap-2 rounded-2xl bg-green-700 px-4 py-4 font-semibold  text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black">
+            <Link href="/about" className="my-8 flex w-40 items-center justify-center gap-2 rounded-2xl bg-green-700 px-4 py-4 font-semibold  text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black">
 
               Learn More
 
@@ -403,7 +403,7 @@ export default function Home() {
 
           {/* Cards */}
 
-          <div className="mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-10 md:mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 
             {services.map((service, index) => (
 
@@ -445,7 +445,7 @@ export default function Home() {
 
             ))}
             <div className="flex justify-center md:justify-start items-center ">
-              <Link href="/about" className="mt-10 flex w-40 items-center justify-center gap-2 rounded-2xl bg-green-700 px-4 py-4 font-semibold  text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black">
+              <Link href="/about" className="mt-8 flex w-40 items-center justify-center gap-2 rounded-2xl bg-green-700 px-4 py-4 font-semibold  text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black">
               Learn More
 
               <FaArrowRight />
@@ -510,7 +510,7 @@ export default function Home() {
               </div>
 
             <div className=" flex flex-col items-center md:items-start mt-10 space-y-6">
-              <div className="flex justify-center md:justify-start flex-wrap gap-3">
+              <div className="flex justify-center md:justify-start flex-wrap gap-5">
                 {[
                   "Team Collaboration",
                   "Professional Development",
@@ -521,7 +521,7 @@ export default function Home() {
                   <motion.div
                     key={index}
                     whileHover={{ x: 10 }}
-                    className="flex w-70 items-center gap-3 rounded-2xl border border-white/40 bg-white/50 p-5 backdrop-blur-xl shadow-lg"
+                    className="w-full flex md:w-70 items-center gap-3 rounded-2xl border border-white/40 bg-white/50 p-5 backdrop-blur-xl shadow-lg"
                   >
 
                     <div className="rounded-full bg-green-100 p-3">
@@ -541,7 +541,7 @@ export default function Home() {
                 ))}
               </div>
 
-              <button className="w-70 flex justify-center items-center gap-3 rounded-2xl bg-green-700 px-8 py-4 font-semibold  text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black">
+              <button className="mt-8 md:mt-0 w-40 flex justify-center items-center gap-3 rounded-2xl bg-green-700 px-4 py-4 font-semibold  text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black">
                 View Careers
 
               <FaArrowRight />
@@ -598,7 +598,7 @@ export default function Home() {
 
             <div className="flex flex-wrap gap-6 lg:justify-end">
 
-              <button className="mt-10 flex items-center gap-3 rounded-2xl bg-white px-8 py-4  text-black hover:text-white font-bold transition-all duration-300 hover:scale-[1.02] hover:bg-black">
+              <button className="my-10 flex items-center gap-3 rounded-2xl bg-white px-8 py-4  text-black hover:text-white font-bold transition-all duration-300 hover:scale-[1.02] hover:bg-black">
 
               Contact US
 
