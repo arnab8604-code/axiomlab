@@ -71,6 +71,9 @@ const ProductDetailsPage = async ({ params }: Props) => {
             <p className="mt-8 text-lg leading-8 text-slate-700">
               {product.description}
             </p>
+            <p className="mt-8 text-xl font-bold leading-8 text-slate-700">
+              {` $ ${product.price}`}
+            </p>
             <AddToCartButton product={product} />
 
           </div>
