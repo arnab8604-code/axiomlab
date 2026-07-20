@@ -17,6 +17,10 @@ export default function CartPage() {
     (total, item) => total + item.quantity,
     0
   );
+  const totalPrice = cart.reduce(
+    (total, item) => total + item.product.price * item.quantity,
+    0
+  );
 
   return (
     <main className="min-h-screen pb-24 bg-[#D8E6EE]">
@@ -70,6 +74,13 @@ export default function CartPage() {
                       <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900">
                         {item.product.name}
                       </h2>
+                      <p className="mt-2 text-lg font-semibold text-cyan-700">
+                        ₹{item.product.price}
+                      </p>
+
+                      <p className="text-sm text-slate-500">
+                        Subtotal: ₹{item.product.price * item.quantity}
+                      </p>
                     </div>
                   </div>
 
@@ -129,6 +140,7 @@ export default function CartPage() {
                   <span className="font-bold text-slate-900">
                     {totalItems}
                   </span>
+                  <p >Subtotal: ₹{totalPrice}</p>
                 </div>
               </div>
 
