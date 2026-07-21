@@ -35,7 +35,7 @@ export default function ManufacturingIndustryPage() {
         <div className="mb-12">
 
           <h1 className="mb-5 text-4xl font-bold text-slate-900 md:text-5xl">
-            Manufacturing Industry
+            Pharmaceuticals
           </h1>
 
           <span className="rounded-full bg-sky-100 px-4 py-2 text-sm font-semibold text-sky-700">
