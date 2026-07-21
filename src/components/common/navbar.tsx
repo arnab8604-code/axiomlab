@@ -98,7 +98,7 @@ const Navbar = () => {
 
     return (
         <nav
-            className={`fixed top-3 left-0 right-0 z-50 mx-auto w-[95%] max-w-[1600px] overflow-hidden border border-white/20 bg-white/50 backdrop-blur-xl shadow-2xl ${menuOpen ? "max-h-screen rounded-t-3xl" : "h-18 rounded-full"}`}>
+            className={`fixed top-3 left-0 right-0 z-50 mx-auto w-[95%] max-w-[1600px] overflow-hidden border border-white/20 bg-white/45 backdrop-blur-xl shadow-2xl ${menuOpen ? "max-h-screen rounded-t-3xl" : "h-18 rounded-full"}`}>
 
             <div className="mx-auto flex h-18 max-w-[1600px] items-center justify-between px-6 lg:px-10">
 

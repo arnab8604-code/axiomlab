@@ -445,7 +445,7 @@ export default function Home() {
 
             ))}
             <div className="flex justify-center md:justify-start items-center ">
-              <Link href="/about" className="mt-8 flex w-40 items-center justify-center gap-2 rounded-2xl bg-green-700 px-4 py-4 font-semibold  text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black">
+              <Link href="/our_services" className="mt-8 flex w-40 items-center justify-center gap-2 rounded-2xl bg-green-700 px-4 py-4 font-semibold  text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black">
               Learn More
 
               <FaArrowRight />
@@ -541,12 +541,12 @@ export default function Home() {
                 ))}
               </div>
 
-              <button className="mt-8 md:mt-0 w-40 flex justify-center items-center gap-3 rounded-2xl bg-green-700 px-4 py-4 font-semibold  text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black">
+              <Link href="/careers" className="mt-8 md:mt-0 w-40 flex justify-center items-center gap-3 rounded-2xl bg-green-700 px-4 py-4 font-semibold  text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black">
                 View Careers
 
               <FaArrowRight />
 
-            </button>
+            </Link>
             </div>
 
           </motion.div>
