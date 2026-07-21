@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { FaChevronDown } from "react-icons/fa";
+import { useRouter } from "next/navigation";
+import { useAppDispatch } from "@/redux/hooks";
+import { setEnquiry } from "@/redux/features/enquireSlice";
 
 const services = [
   {
@@ -49,7 +51,8 @@ Axiom Laboratory provides these services as our flagship services, and we are on
 
 export default function ManufacturingIndustryPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-
+const router = useRouter();
+const dispatch = useAppDispatch();
   const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
@@ -103,8 +106,8 @@ export default function ManufacturingIndustryPage() {
                 {/* Body */}
                 <div
                   className={`grid transition-all duration-300 ${openIndex === index
-                      ? "grid-rows-[1fr]"
-                      : "grid-rows-[0fr]"
+                    ? "grid-rows-[1fr]"
+                    : "grid-rows-[0fr]"
                     }`}
                 >
                   <div className="overflow-hidden">
@@ -112,15 +115,21 @@ export default function ManufacturingIndustryPage() {
                       <p className="leading-8 text-slate-600">
                         {service.description}
                       </p>
-                      <Link href={{
-                        pathname: "/enquiry",
-                        query: {
-                          industry: "Government",
-                          service: service.title,
-                        },
-                      }}className="mt-5 block w-30 text-center rounded-xl bg-green-700 px-2 py-3 font-semibold  text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black">
+                      <button
+                        onClick={() => {
+                          dispatch(
+                            setEnquiry({
+                              industry: "Manufacturing Industry",
+                              service: service.title,
+                            })
+                          );
+
+                          router.push("/enquiry");
+                        }}
+                        className="mt-5 block w-30 rounded-xl bg-green-700 px-2 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black"
+                      >
                         Enquire
-                      </Link>
+                      </button>
                     </div>
                   </div>
                 </div>

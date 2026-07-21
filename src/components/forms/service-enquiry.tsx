@@ -1,14 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useAppSelector } from "@/redux/hooks";
 
 export default function ServiceEnquiry() {
-  const searchParams = useSearchParams();
-
-  const industry = searchParams.get("industry") ?? "";
-  const service = searchParams.get("service") ?? "";
-
+  const { industry, service } = useAppSelector(
+  (state) => state.enquiry
+);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",

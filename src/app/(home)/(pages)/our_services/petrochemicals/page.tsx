@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useAppDispatch } from "@/redux/hooks";
+import { setEnquiry } from "@/redux/features/enquireSlice";
 import { FaChevronDown } from "react-icons/fa";
 
 const services = [
@@ -17,6 +19,8 @@ const services = [
 
 export default function ManufacturingIndustryPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const router = useRouter();
+const dispatch = useAppDispatch();
 
   const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -83,15 +87,21 @@ export default function ManufacturingIndustryPage() {
                         {service.description}
                       </p>
 
-                      <Link href={{
-                        pathname: "/enquiry",
-                        query: {
-                          industry: "Petrochemical Industry",
-                          service: service.title,
-                        },
-                      }}className="mt-5 block w-30 text-center rounded-xl bg-green-700 px-2 py-3 font-semibold  text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black">
-                        Enquire
-                      </Link>
+                      <button
+  onClick={() => {
+    dispatch(
+      setEnquiry({
+        industry: "Manufacturing Industry",
+        service: service.title,
+      })
+    );
+
+    router.push("/enquiry");
+  }}
+  className="mt-5 block w-30 rounded-xl bg-green-700 px-2 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black"
+>
+  Enquire
+</button>
                     </div>
                   </div>
                 </div>

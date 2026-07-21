@@ -1,13 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { FaChevronDown } from "react-icons/fa";
+import { useRouter } from "next/navigation";
+import { useAppDispatch } from "@/redux/hooks";
+import { setEnquiry } from "@/redux/features/enquireSlice";
 
 const services = [
   {
-  title: "Indoor Air Quality Assessment",
-  description: `
+    title: "Indoor Air Quality Assessment",
+    description: `
 IAQ is defined as the "freshness" and "cleanliness" of the air quality within and around buildings and structures. This is of paramount importance as it relates to the health and comfort of the occupants of such buildings and structures.
 
 The IAQ can be affected by gases such as carbon monoxide, carbon dioxide, radon, ozone, and volatile organic compounds, as well as by particulates and microbial contaminants (mold and bacteria). Such substances, chemicals, or any other mass or energy stressor have the potential to induce adverse health conditions and "Sick Building Syndrome (SBS)."
@@ -20,15 +22,17 @@ It is imperative that the environments we live and work in are designed to suppo
 
 At Axiom Laboratory, our qualified specialists provide internationally recognized assessment plans and practical solutions to ensure that your premises meet global sustainability and indoor environmental quality standards.
   `,
-},
+  },
   {
     title: "Compressed Dry Air Quality",
-    description:`Compressed Dry Air Quality test can be performed for solid particles, pressure dewpoint and oil mist with reference to ISO 8573-1:2010 Classes 1 to 5.  In addition, Breathing Air Quality test can be performed for oxygen, hydrocarbon, carbon monoxide, carbon dioxide and odour with reference to OSHA 29 CFR 1910.134 Grade D ANSI/CGA G-7.1-2004. `,
+    description: `Compressed Dry Air Quality test can be performed for solid particles, pressure dewpoint and oil mist with reference to ISO 8573-1:2010 Classes 1 to 5.  In addition, Breathing Air Quality test can be performed for oxygen, hydrocarbon, carbon monoxide, carbon dioxide and odour with reference to OSHA 29 CFR 1910.134 Grade D ANSI/CGA G-7.1-2004. `,
   },
 ];
 
 export default function ManufacturingIndustryPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const router = useRouter();
+  const dispatch = useAppDispatch();
 
   const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -79,19 +83,17 @@ export default function ManufacturingIndustryPage() {
                   </span>
 
                   <FaChevronDown
-                    className={`text-sky-600 transition-transform duration-300 ${
-                      openIndex === index ? "rotate-180" : ""
-                    }`}
+                    className={`text-sky-600 transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
 
                 {/* Body */}
                 <div
-                  className={`grid transition-all duration-300 ${
-                    openIndex === index
+                  className={`grid transition-all duration-300 ${openIndex === index
                       ? "grid-rows-[1fr]"
                       : "grid-rows-[0fr]"
-                  }`}
+                    }`}
                 >
                   <div className="overflow-hidden">
                     <div className="border-t border-slate-200 bg-slate-50 px-6 py-5">
@@ -99,15 +101,21 @@ export default function ManufacturingIndustryPage() {
                         {service.description}
                       </p>
 
-                     <Link href={{
-                        pathname: "/enquiry",
-                        query: {
-                          industry: "Manufacturing Industry",
-                          service: service.title,
-                        },
-                      }} className="mt-5 block w-30 text-center rounded-xl bg-green-700 px-2 py-3 font-semibold  text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black">
+                      <button
+                        onClick={() => {
+                          dispatch(
+                            setEnquiry({
+                              industry: "Manufacturing Industry",
+                              service: service.title,
+                            })
+                          );
+
+                          router.push("/enquiry");
+                        }}
+                        className="mt-5 block w-30 rounded-xl bg-green-700 px-2 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black"
+                      >
                         Enquire
-                      </Link>
+                      </button>
                     </div>
                   </div>
                 </div>
