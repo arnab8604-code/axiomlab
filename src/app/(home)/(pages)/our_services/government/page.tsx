@@ -6,8 +6,8 @@ import { FaChevronDown } from "react-icons/fa";
 
 const services = [
   {
-  title: "Source Emission Monitoring / Ambient Air Quality Monitoring",
-  description: `
+    title: "Source Emission Monitoring / Ambient Air Quality Monitoring",
+    description: `
 All testings shall be performed in compliance with the rules and regulations set forth by the Singapore’s National Environment Agency (NEA) - Environmental Protection and Management Act, 2008 “Environmental Protection and Management (Air Impurities) (Amendment) Regulations 2015”, and also reference to “Special Emission Standards for Waste Incinerators” and or any other requirements necessary for a complete compliance as required by the Singapore government.
 
 Destruction Efficiency (DE) is defined as the percentage of Principal Organic Hazardous Constituent (POHC) ie. pollutant indicator destroyed or irreversibly transformed by a particular method or technology and shall meet the NEA’s DRE guidelines of 99.9999%. 
@@ -26,14 +26,14 @@ The main sources of air pollution in Singapore are emissions from the industries
 
 As international air quality benchmarks such as the World Health Organisation Air Quality Guidelines (WHO AQGs) are constantly reviewed, NEA established the Advisory Committee on Ambient Air Quality in July 2010 to recommend air quality targets for Singapore.  Axiomlab are able to offer ambient air quality monitoring and assessment to meet these requirements to support process industries, initial plants set up baseline ambient air quality studies, etc.
   `,
-},
+  },
   {
     title: "Asbestos Survey & Testing (including Asbestos Demolition Clearance Survey)",
-    description:`Under the SOLAS II-1, Regulation 3-5 & MSC.1/Circ.1379, wef 1 January 2011, for all ships, new installation of materials which contain asbestos shall be prohibited. There is also restriction and banned on use of asbestos containing materials worldwide.  Our laboratory have recognised & competent specialists (USEPA, BOHS, NATA & MOM) and equipment resources (PLM, PCM & TEM) to conduct asbestos survey, testing, audit and consultancy.`,
+    description: `Under the SOLAS II-1, Regulation 3-5 & MSC.1/Circ.1379, wef 1 January 2011, for all ships, new installation of materials which contain asbestos shall be prohibited. There is also restriction and banned on use of asbestos containing materials worldwide.  Our laboratory have recognised & competent specialists (USEPA, BOHS, NATA & MOM) and equipment resources (PLM, PCM & TEM) to conduct asbestos survey, testing, audit and consultancy.`,
   },
   {
     title: "Greenhouse Gas (GHG) Emissions & DRE of PFCs Testing for Carbon Taxation",
-    description:`Axiom Laboratory is the first lab in Singapore to carry out GHG emissions testing for the wafer fab, petroleum and petrochemical, and marine industries. This is in relation to the series of laws that the government of Singapore has introduced to comply with international global warming and climate change guidelines. 
+    description: `Axiom Laboratory is the first lab in Singapore to carry out GHG emissions testing for the wafer fab, petroleum and petrochemical, and marine industries. This is in relation to the series of laws that the government of Singapore has introduced to comply with international global warming and climate change guidelines. 
 
 The Carbon Pricing Act (CPA) and its regulations came into operation on the 1st of January 2019. The Measurement, Reporting and Verification (MRV) requirements are specified in the Carbon Pricing Regulations 2018 (under the section on MRV). Under this Act, the responsibility rests with any industrial facility that emits direct GHGs equal to or above 2,000 tCO2e annually to register as a reportable facility and to submit an Emissions Report annually. 
 
@@ -95,26 +95,30 @@ export default function ManufacturingIndustryPage() {
                   </span>
 
                   <FaChevronDown
-                    className={`text-sky-600 transition-transform duration-300 ${
-                      openIndex === index ? "rotate-180" : ""
-                    }`}
+                    className={`text-sky-600 transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
 
                 {/* Body */}
                 <div
-                  className={`grid transition-all duration-300 ${
-                    openIndex === index
+                  className={`grid transition-all duration-300 ${openIndex === index
                       ? "grid-rows-[1fr]"
                       : "grid-rows-[0fr]"
-                  }`}
+                    }`}
                 >
                   <div className="overflow-hidden">
                     <div className="border-t border-slate-200 bg-slate-50 px-6 py-5">
                       <p className="leading-8 text-slate-600">
                         {service.description}
                       </p>
-                      <Link href="/our_services/service_enquiry" className=" block w-25 flex justify-center mt-10 rounded-xl bg-sky-600 px-5 py-3 font-medium text-white transition hover:bg-sky-700">
+                      <Link href={{
+                        pathname: "/enquiry",
+                        query: {
+                          industry: "Government",
+                          service: service.title,
+                        },
+                      }}className="mt-5 block w-30 text-center rounded-xl bg-green-700 px-2 py-3 font-semibold  text-white transition-all duration-300 hover:scale-[1.02] hover:bg-black">
                         Enquire
                       </Link>
                     </div>
