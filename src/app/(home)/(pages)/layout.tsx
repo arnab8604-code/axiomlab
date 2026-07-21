@@ -31,6 +31,10 @@ const pageContent = {
     title: "News",
     highlight: " To keep you updated",
   },
+  clientele:{
+    title: "Our",
+    highlight: "CLientele"
+  },
 };
 
 export default function PagesLayout({

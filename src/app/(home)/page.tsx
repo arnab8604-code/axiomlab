@@ -200,7 +200,7 @@ export default function Home() {
 
               {/* Card 2 */}
 
-              <div className="rounded-[28px] border border-white/40 bg-white/55 p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
+              <Link href="/clientele" className=" block rounded-[28px] border border-white/40 bg-white/55 p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
 
                 <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-green-100">
 
@@ -219,7 +219,7 @@ export default function Home() {
                   environmental decisions.
                 </p>
 
-              </div>
+              </Link>
 
             </motion.div>
 
